@@ -1,0 +1,8 @@
+<form method="link" action="<%= new_task_path %>">
+  <input type="submit" value="+ New Task" id="new-task" class="round" />
+</form>
+
+<% if @tasks.any? %>
+  <%= render @tasks %>
+<% end %>
+

@@ -1,0 +1,82 @@
+$sayge-green: #90BF3A;
+$sayge-blue: #335A6B;
+$tweet-blue: #7FC0DE;
+$sayge-orange: #F25E00;
+$light-orange: #FFAD5C;
+$light-gray: #CCC;
+$light-green: #BCD989;
+
+.round {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+body {
+  background: $sayge-blue;
+}
+
+nav {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 10%;
+  background: $sayge-green;
+  margin-bottom: 1em;
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+#main {
+  width: 95%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: $tweet-blue;
+}
+
+#interface {
+  padding: 0.5em;
+  margin-top: 1em;
+
+  #new-task {
+    font-size: 1.2em;
+    background: $sayge-blue;
+    border-color: $sayge-blue;
+    color: $light-gray;
+  }
+}
+
+.task {
+  position: relative;
+  background: $light-green;
+  width: 40%;
+  padding: 0.5em;
+  margin: 0.5em;
+
+  .name {
+    color: #000;
+    font-weight: bold;
+  }
+
+  .created {
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .description {
+    padding: 0.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .actions {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+  }
+}
+

@@ -3,8 +3,11 @@ Issues::Application.routes.draw do
   devise_for :users
 
   resources :tasks
+  resources :goals
 
   root :to => 'tasks#index'
+
+  match '/tasks/goal/:id', :to => 'tasks#by_goal', :as => 'tasks_by_goal'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

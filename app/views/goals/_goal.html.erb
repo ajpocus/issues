@@ -1,0 +1,6 @@
+<div class="goal round">
+  <%= link_to goal.name, goal_path(goal) %>
+  <span class="created"><%= goal.created_at.strftime("%m/%d/%Y") %></span>
+  <div class="description"><%= goal.description %></div>
+</div>
+

@@ -3,6 +3,18 @@
 </form>
 
 <% if @tasks.any? %>
-  <%= render @tasks %>
+  <div class="task-list">
+    <%= render @tasks %>
+  </div>
+<% end %>
+
+<% if @goals.any? %>
+  <div class="goal-list">
+    <% @goals.each do |goal| %>
+      <div class="goal">
+	<%= link_to goal.name, tasks_by_goal_path(goal) %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 

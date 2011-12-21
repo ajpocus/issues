@@ -4,15 +4,17 @@ class TasksController < ApplicationController
     :only => [:new, :create, :edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @tasks = current_user.tasks.all
-    else
-      @tasks = []
-    end
+    @tasks = Task.all
+    @goals = Goal.all
   end
 
   def show
-    @task = current_user.tasks.find(params[:id])
+    @task = Task.find(params[:id])
+  end
+
+  def by_goal
+    @goal = Goal.find(params[:id])
+    @tasks = Task.where(:goal_id => @goal)
   end
 
   def new
@@ -21,6 +23,8 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build(params[:task])
+    @goal = Goal.find(params[:goal_id])
+    @task.goal = @goal
     if @task.save
       redirect_to root_path, :flash => { :success => "Task created!" }
     else

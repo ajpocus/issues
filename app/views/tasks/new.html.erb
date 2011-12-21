@@ -11,6 +11,12 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= f.label :goals %>
+    <%= select_tag :goal_id, options_from_collection_for_select(Goal.all,
+      "id", "name") %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Create Task" %>
   </div>

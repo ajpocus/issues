@@ -49,11 +49,24 @@ nav {
   }
 }
 
-.task {
+.task-list {
+  width: 45%;
+  display: inline-block;
+}
+
+.goal-list {
+  position: absolute;
+  left: 45%;
+  width: 45%;
+  display: inline-block;
+}
+
+.task, .goal {
   position: relative;
   background: $light-green;
   width: 40%;
   padding: 0.5em;
+  padding-right: 55%;
   margin: 0.5em;
 
   .name {

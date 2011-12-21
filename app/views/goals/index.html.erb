@@ -1,0 +1,5 @@
+<%= link_to "New Goal", new_goal_path %>
+
+<% if @goals.any? %>
+  <%= render @goals %>
+<% end %>
